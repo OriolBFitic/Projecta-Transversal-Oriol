@@ -1,0 +1,334 @@
+
+/* ---------------------------------------------------- */
+/* 1. ESTILOS BASE DE LA PÁGINA (Página Web principal) */
+/* ---------------------------------------------------- */
+
+body {
+    background-image: url('IMATGES/red-blue-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Hace que la imagen de fondo se quede quieta (fija) cuando el usuario hace 'scroll'. */
+    background-attachment: fixed;
+    padding-top: 60px;
+    margin: 0;
+    /* Fuente por defecto para el contenido de la web */
+    font-family: 'Arial', sans-serif;
+}
+
+/* 2. ESTILOS DEL MENÚ FIJO (.fixed y .MENU) */
+
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: hsl(234, 100%, 22%); /* Azul Oscuro */
+    height: 60px;
+    /* Asegura que este elemento esté siempre por encima de casi todos los demás elementos de la página. */
+    z-index: 1000;
+}
+/* Estil per a la pestanya activa */
+.MENU a.active {
+    background-color: #002e5a; 
+    border-radius: 5px; /* Opcional: Afegeix cantonades arrodonides */
+}
+
+/* Opcional: Estil per quan passes el ratolí (hover) */
+.MENU a:hover {
+    background-color: #003a70; /* Un fons lleugerament més fosc quan es passa el ratolí */
+    border-radius: 5px; 
+}
+.MENU {
+    /* Usa 'Flexbox', un sistema moderno para acomodar los elementos (los enlaces) en una fila de manera flexible. */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.MENU a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px 15px;
+}
+
+/* 3. ESTILOS DE TÍTULOS DE LA PÁGINA */
+
+.titulo-principal {
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* 4. ESTILS DEL CONTINGUT D'HISTÒRIA (.historia-container) */
+.historia-container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    color: white;
+}
+
+.historia-container h2 {
+    color: #ffc000; /* Amarillo/Oro */
+    border-bottom: 2px solid #004D98; /* Azul Barça */
+    padding-bottom: 10px;
+    margin-top: 25px;
+    font-size: 24px;
+}
+
+.historia-container p {
+    line-height: 1.6;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* 5. ESTILS DE L'EQUIPACIÓ (.equipacions-container) */
+.equipacions-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    color: white;
+    display: flex; /* Essencial per a la disposició horitzontal */
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.equipacio-item {
+    width: 30%;
+    min-width: 250px;
+    margin: 15px;
+    padding: 15px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    box-sizing: border-box; /* Clau per al disseny de columnes */
+}
+
+.equipacio-item h2 {
+    color: #ffc000;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.samarreta-img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 15px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+/* 6. ESTILS DEL CENTRATGE DEL GIF (Si es fa servir la classe .gif-centrat-vertical) */
+.gif-centrat-vertical {
+    min-height: calc(100vh - 60px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 7. ESTILOS DEL CALENDARIO (.calendari-container) */
+.calendari-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px 10px;
+    
+    /* Utilitzem Grid per a una disposició de targetes flexible */
+    display: grid;
+    /* 3 columnes si hi ha espai, sinó s'adapta a l'amplada mínima */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Espai entre targetes */
+    
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+.targeta-partit {
+    background-color: rgba(255, 255, 255, 0.1); /* Fons lleugerament transparent */
+    color: white;
+    border-radius: 10px;
+    overflow: hidden; /* Per assegurar que el contingut no sobresurti */
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid #004D98; /* Blau Barça com a accent */
+}
+
+.targeta-partit:hover {
+    transform: translateY(-5px); /* Efecte d'aixecament al passar el ratolí */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+}
+
+/* Header (Data i Hora) */
+.header-partit {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.data-principal {
+    color: #FFC000; /* Data en Groc/Or */
+}
+
+/* Cos de la Targeta (Rival i Competició) */
+.cos-partit {
+    padding: 20px 10px;
+}
+
+.competicio-partit {
+    font-size: 0.9em;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.enfrontament {
+    font-size: 1.5em;
+    font-weight: 900;
+}
+
+.vs {
+    color: #FFC000; /* VS en Groc */
+    margin: 0 5px;
+}
+
+/* Footer (Detalls) */
+.footer-partit {
+    background-color: rgba(0, 77, 152, 0.7); /* Blau fosc semi-transparent */
+    padding: 10px;
+    font-size: 0.85em;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Estils Específics per Tipus de Partit */
+.targeta-partit.classic {
+    border-top-color: red; /* Toque especial per al clàssic */
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('IMATGES/CLASICO.PNG');
+    background-size: cover;
+    background-position: center;
+}
+
+.targeta-partit.copa {
+    border-top-color: silver;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('IMATGES/BARÇA\ VS\ VALENCIA.PNG');
+    background-size: cover;
+    background-position: Center;
+}
+
+.targeta-partit.lliga {
+    border-top-color: gold;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('IMATGES/GIRONA\ 2.PNG');
+    background-position: center;
+    background-size: cover;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 8. ESTILOS DEL CURRÍCULUM VITAE (ENCAPSULADOS EN .curriculum-wrapper) */
+/* -------------------------------------------------------------------------- */
+
+
+/* Estilos del wrapper del CV */
+.curriculum-wrapper {
+    max-width: 900px;
+    margin: 40px auto; /* Centra el CV en la página con margen superior e inferior */
+    padding: 0 20px; /* Pequeño relleno para asegurar que no toque los bordes de la ventana */
+}
+
+/* Contenedor principal del CV */
+.curriculum-wrapper .contenedor {
+    background-color: white;
+    border-top: 8px solid #a50044; /* Rojo Barça */
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif; /* Aplica la fuente aquí, no en el body global */
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+}
+
+.curriculum-wrapper .cabecera {
+    background-color: #004d98; /* Azul Barça */
+    color: white;
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.curriculum-wrapper .cabecera h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.curriculum-wrapper .cabecera p {
+    font-size: 1.3em;
+}
+
+.curriculum-wrapper .seccion {
+    padding: 30px 40px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.curriculum-wrapper .seccion h2 {
+    color: #d4af37; /* Dorado */
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 4px solid #d4af37;
+    font-weight: bold;
+}
+
+.curriculum-wrapper .seccion p {
+    color: #333;
+    font-size: 1.1em;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+.curriculum-wrapper table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse; /* Añadido para mejor diseño de tabla */
+}
+
+.curriculum-wrapper th {
+    background-color: #004d98;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #a50044;
+}
+
+.curriculum-wrapper td {
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.curriculum-wrapper .etiqueta {
+    font-weight: bold;
+    color: #d4af37;
+    width: 180px;
+}
+
+.curriculum-wrapper a {
+    color: #a50044;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.curriculum-wrapper a:hover {
+    color: #004d98;
+    text-decoration: underline;
+}

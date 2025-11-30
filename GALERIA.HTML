@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <title>FC BARCELONA - Jugadors Històrics</title>
+    <link rel="stylesheet" type="text/css" href="css index.css">
+
+    <style>
+        /* Estil per a la quadrícula (Grid) */
+        .jugadors-grid {
+            /* Crea una quadrícula amb 3 columnes mínim de 350px, i si no caben, es posen a sota */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px; /* Espai entre les targetes */
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        /* Estil per a cada targeta de jugador */
+        .jugador-targeta {
+            background-color: #004D98; /* Blau Barça fosc */
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            text-align: center;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .jugador-targeta:hover {
+            transform: translateY(-5px); /* Efecte d'aixecament al passar el ratolí */
+            background-color: #A50044; /* Granat Barça */
+        }
+
+        .jugador-targeta img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Fer la imatge rodona */
+            object-fit: cover;
+            border: 5px solid #ffc000; /* Detall groc */
+            margin-bottom: 15px;
+        }
+
+        .detall-info {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px 0;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        .detall-info strong {
+            color: #ffc000; /* Color groc per a les dades clau */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="fixed">
+        <div class="MENU">
+            <a href="HOME.HTML">Home</a>
+            <a href="EQUIPACIO.HTML">EQUIPACIÓ</a>
+            <a href="CALENDARI.html">CALENDARI</a>
+            <a href="PARTITS.html">PARTITS</a>
+            <a href="nosaltres.html">NOSALTRES</a>
+            <a class="active" href="GALERIA.html">GALERIA</a>
+            <a href="FORMULARI.HTML">FORMULARI</a>
+        </div>
+    </div>
+
+    <h1 class="titulo-principal">
+        Llegendes del FC Barcelona
+    </h1>
+
+    <div class="jugadors-grid">
+        
+        <div class="jugador-targeta">
+            <img src="IMATGES/JUGADORS/messi.jpg" alt="Foto de Leo Messi">
+            <h2>Lionel Messi</h2>
+            <p>Posició: Davanter</p>
+            <div class="detall-info">
+                <strong>Edat actual:</strong> 38 anys
+                <br>
+                <strong>Gols marcats:</strong> 672
+                <br>
+                <strong>Etapa al Club:</strong> 2004 - 2021
+            </div>
+        </div>
+
+        <div class="jugador-targeta">
+            <img src="IMATGES/JUGADORS/XAVI.PNG" alt="Foto de Xavi Hernández">
+            <h2>Xavi Hernández</h2>
+            <p>Posició: Migcampista</p>
+            <div class="detall-info">
+                <strong>Edat actual:</strong> 45 anys
+                <br>
+                <strong>Gols marcats:</strong> 85
+                <br>
+                <strong>Etapa al Club:</strong> 1998 - 2015
+            </div>
+        </div>
+
+        <div class="jugador-targeta">
+            <img src="IMATGES/JUGADORS/PUYOL.PNG" alt="Foto de Carles Puyol">
+            <h2>Carles Puyol</h2>
+            <p>Posició: Defensa Central</p>
+            <div class="detall-info">
+                <strong>Edat actual:</strong> 47 anys
+                <br>
+                <strong>Gols marcats:</strong> 18
+                <br>
+                <strong>Etapa al Club:</strong> 1999 - 2014
+            </div>
+        </div>
+
+        <div class="jugador-targeta">
+            <img src="IMATGES/JUGADORS/INIESTA.jpg" alt="Foto de Andrés Iniesta">
+            <h2>Andrés Iniesta</h2>
+            <p>Posició: Migcampista</p>
+            <div class="detall-info">
+                <strong>Edat actual:</strong> 41 anys
+                <br>
+                <strong>Gols marcats:</strong> 57
+                <br>
+                <strong>Etapa al Club:</strong> 2002 - 2018
+            </div>
+        </div>
+
+        <div class="jugador-targeta">
+            <img src="IMATGES/JUGADORS/ronaldinho.jpg" alt="Foto de Ronaldinho">
+            <h2>Ronaldinho</h2>
+            <p>Posició: Davanter</p>
+            <div class="detall-info">
+                <strong>Edat actual:</strong> 45 anys
+                <br>
+                <strong>Gols marcats:</strong> 94
+                <br>
+                <strong>Etapa al Club:</strong> 2003 - 2008
+            </div>
+        </div>
+
+        <div class="jugador-targeta">
+            <img src="IMATGES/JUGADORS/ronaldo.jpg" alt="Foto de Ronaldo Nazário">
+            <h2>Ronaldo Nazário</h2>
+            <p>Posició: Davanter</p>
+            <div class="detall-info">
+                <strong>Edat actual:</strong> 49 anys
+                <br>
+                <strong>Gols marcats:</strong> 47
+                <br>
+                <strong>Etapa al Club:</strong> 1996 - 1997
+            </div>
+        </div>
+        
+    </div>
+    
+    <div style="background-color: #004D98; color: white; text-align: center; padding: 15px; margin-top: 50px;">
+        <p>© 2025 FC Barcelona Web Fan Site - Desenvolupat per Oriol & Asad (Institut TIC Barcelona)</p>
+    </div>
+
+</body>
+</html>

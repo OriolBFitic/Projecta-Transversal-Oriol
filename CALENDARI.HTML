@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <title>FC BARCELONA - CALENDARI</title>
+    <link rel="stylesheet" type="text/css" href="css index.css">
+    
+    <style>
+        .calendari-basic {
+            width: 80%;
+            margin: 40px auto;
+            border-collapse: collapse;
+            background-color: white; /* Fons blanc per claredat */
+            color: black;
+            font-size: 1.1em;
+            text-align: center;
+        }
+        .calendari-basic th {
+            background-color: #004D98; /* Blau fosc del club */
+            color: white;
+            padding: 10px;
+            text-transform: uppercase;
+            border: 1px solid #ddd;
+        }
+        .calendari-basic td {
+            border: 1px solid #ddd;
+            padding: 15px 5px;
+            height: 70px;
+            vertical-align: top;
+            text-align: right;
+        }
+        .dia-partit {
+            background-color: #A50044; /* Granat per destacar el partit */
+            color: white;
+            font-weight: bold;
+        }
+        .info-partit {
+            font-size: 0.7em;
+            display: block;
+            text-align: left;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="fixed">
+        <div class="MENU">
+            <a href="HOME.HTML">Home</a>
+            <a href="EQUIPACIO.HTML">EQUIPACIÓ</a> 
+            <a class="active" href="CALENDARI.HTML">CALENDARI</a>
+            <a href="PARTITS.HTML">PARTITS</a>
+            <a href="NOSALTRES.HTML">NOSALTRES</a>
+            <a href="GALERIA.HTML">GALERIA</a> 
+            <a href="FORMULARI.HTML">FORMULARI</a>
+
+        </div>
+    </div> 
+    
+    <h1 class="titulo-principal">
+        CALENDARI DEL MES
+    </h1>
+    
+    <h2 style="text-align: center; color: white; margin-top: 40px;">📅 Novembre 2025</h2>
+    
+    <table class="calendari-basic">
+        <thead>
+            <tr>
+                <th>Dilluns</th>
+                <th>Dimarts</th>
+                <th>Dimecres</th>
+                <th>Dijous</th>
+                <th>Divendres</th>
+                <th>Dissabte</th>
+                <th>Diumenge</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="5"></td>
+                <td>1</td>
+                <td class="dia-partit">2 <span class="info-partit">⚽ Lliga vs. Athletic</span></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>4</td>
+                <td class="dia-partit">5 <span class="info-partit">🏆 Champions (Casa)</span></td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td class="dia-partit">9 <span class="info-partit">⚽ Lliga vs. Sevilla</span></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>18</td>
+                <td class="dia-partit">19 <span class="info-partit">🏆 Copa del Rei</span></td>
+                <td>20</td>
+                <td>21</td>
+                <td class="dia-partit">22 <span class="info-partit">⚽ Lliga vs. Getafe</span></td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td class="dia-partit">25 <span class="info-partit">🏆 Champions (Fora)</span></td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="background-color: #004D98; color: white; text-align: center; padding: 15px; margin-top: 50px;">
+        <p>© 2025 FC Barcelona Web Fan Site - Desenvolupat per Oriol & Asad (Institut TIC Barcelona)</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <title>FC BARCELONA - Formulari de Preferències</title>
+    <link rel="stylesheet" type="text/css" href="css index.css">
+    
+    <style>
+        /* Mantenim els teus estils originals per al contenidor i els form-groups */
+        .form-container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #1f1f1f;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #004D98;
+        }
+        /* Afegim textarea al selector d'amplada per consistència */
+        .form-group select, .form-group input[type="text"], .form-group input[type="email"], .form-group input[type="number"], .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            /* La textarea necessita ser un element de bloc com els altres */
+            display: block; 
+        }
+        .form-container button {
+            background-color: #A50044;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .form-container button:hover {
+            background-color: #004D98;
+        }
+
+        /* Estil per als camps radio/checkbox en línia */
+        .opcio-inline {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: normal; /* Desfem el bold de form-group label */
+        }
+        .opcio-inline input {
+            width: auto; /* Desfem el 100% per a radio/checkbox */
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="fixed">
+        <div class="MENU">
+            <a href="HOME.HTML">Home</a>
+            <a href="EQUIPACIO.HTML">EQUIPACIÓ</a> 
+            <a href="CALENDARI.HTML">CALENDARI</a>
+            <a href="PARTITS.HTML">PARTITS</a>
+            <a href="NOSALTRES.HTML">NOSALTRES</a>
+            <a href="GALERIA.HTML">GALERIA</a> 
+            <a class="active" href="FORMULARI.HTML">FORMULARI</a>
+        </div>
+    </div> 
+    
+    <h1 class="titulo-principal">
+        ENQUESTA DE PREFERÈNCIES CULERS
+    </h1>
+    
+    <div class="form-container">
+        <form action="confirmacio.html" method="POST">
+            
+            <div class="form-group">
+                <label for="nom">👤 Nom i Cognoms (Requerit):</label>
+                <input type="text" id="nom" name="nom" placeholder="P. ex: Lionel Messi" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email_contacte">📧 Correu electrònic (Requerit):</label>
+                <input type="email" id="email_contacte" name="email_contacte" placeholder="exemple@iticbcn.cat" required>
+            </div>
+
+            <div class="form-group">
+                <label for="edat">🎂 Edat (Requerit):</label>
+                <input type="number" id="edat" name="edat" min="16" max="99" placeholder="P. ex: 35" required>
+            </div>
+            
+            <div class="form-group">
+                <label>📌 Seccions d'interès (Escull 3+):</label><br>
+                <label for="interes_historia" class="opcio-inline">
+                    <input type="checkbox" id="interes_historia" name="interes[]" value="historia" checked> Història
+                </label>
+                <label for="interes_equipacio" class="opcio-inline">
+                    <input type="checkbox" id="interes_equipacio" name="interes[]" value="equipacio"> Equipació
+                </label>
+                <label for="interes_galeria" class="opcio-inline">
+                    <input type="checkbox" id="interes_galeria" name="interes[]" value="galeria"> Galeria
+                </label>
+                <label for="interes_cv" class="opcio-inline">
+                    <input type="checkbox" id="interes_cv" name="interes[]" value="cv"> Sobre Desenvolupadors
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label>⭐ Opinió general del portal web:</label><br>
+                <label for="op_excelent" class="opcio-inline">
+                    <input type="radio" id="op_excelent" name="opinio_general" value="excelent" checked> Excel·lent
+                </label>
+                <label for="op_satisfactori" class="opcio-inline">
+                    <input type="radio" id="op_satisfactori" name="opinio_general" value="satisfactori"> Satisfactori
+                </label>
+                <label for="op_millora" class="opcio-inline">
+                    <input type="radio" id="op_millora" name="opinio_general" value="millora"> Necessita Millora
+                </label>
+            </div>
+            
+            <div class="form-group">
+                <label for="jugadors_favorits">⚽ Quins jugadors històrics admires més? </label>
+                <select id="jugadors_favorits" name="jugadors_favorits[]" multiple size="5" required>
+                    <option value="messi">Lionel Messi</option>
+                    <option value="cruyff">Johan Cruyff</option>
+                    <option value="xavi">Xavi Hernández</option>
+                    <option value="iniesta">Andrés Iniesta</option>
+                    <option value="puyol">Carles Puyol</option>
+                    <option value="maradona">Diego Maradona</option>
+                    <option value="ronaldinho">Ronaldinho</option>
+                </select>
+                <small style="color: #666;">Utilitza CTRL (Windows) o CMD (Mac) per seleccionar múltiples opcions.</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="suggeriments">📝 Suggeriments per millorar el portal web (Text Llarg):</label>
+                <textarea id="suggeriments" name="suggeriments" rows="4" placeholder="Escriu aquí les teves idees, amb un mínim de 50 caràcters per demostrar que és un text llarg."></textarea>
+            </div>
+
+            <button type="submit">Enviar Preferències</button>
+        </form>
+        
+    </div>
+
+    <div style="background-color: #004D98; color: white; text-align: center; padding: 15px; margin-top: 50px;">
+        <p>© 2025 FC Barcelona Web Fan Site - Desenvolupat per Oriol & Asad (Institut TIC Barcelona)</p>
+    </div>
+
+</body>
+</html>
